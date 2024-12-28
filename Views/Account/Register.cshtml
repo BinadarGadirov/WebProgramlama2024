@@ -1,0 +1,103 @@
+﻿
+@model RegisterViewModel
+@{
+    ViewData["Title"] = "Register";
+}
+
+<!--? Hero Start -->
+<div class="slider-area2">
+    <div class="slider-height2 d-flex align-items-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="hero-cap hero-cap2 pt-70 text-center">
+                        <h2>Üye Olun</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Hero End -->
+
+<div class="register-container">
+    <div class="register-box">
+        <h2>Register</h2>
+        <form asp-controller="Account" asp-action="Register" method="post">
+            <div class="form-group">
+                <label asp-for="FullName">Full Name:</label>
+                <input asp-for="FullName" class="form-control" />
+                <span asp-validation-for="FullName" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Email">Email:</label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Password">Password:</label>
+                <input asp-for="Password" type="password" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="RePassword">Confirm Password:</label>
+                <input asp-for="RePassword" type="password" class="form-control" />
+                <span asp-validation-for="RePassword" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Register</button>
+            </div>
+
+            <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+
+            <div class="login-link">
+                Already have an account? <a asp-action="Login">Login here</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+<style>
+    /* Container: Sayfa ortasında hizalama */
+    .register-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh; /* Sayfa yüksekliğini kaplar */
+        background-color: #f5f5f5; /* Hafif bir arka plan rengi */
+    }
+
+    /* Register Box: Kutunun stili */
+    .register-box {
+        background-color: #ffffff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 400px;
+    }
+
+    /* Form başlık ve metin stili */
+    .register-box h2 {
+        text-align: center;
+        margin-bottom: 20px;
+        color: #333333;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    .login-link {
+        margin-top: 15px;
+        text-align: center;
+    }
+
+    .btn-primary {
+        width: 100%;
+    }
+</style>
